@@ -10,9 +10,25 @@ export default function GlobalStyles() {
 
         *, *::after, *::before {
           box-sizing: border-box;
-          -moz-osx-font-smoothing: grayscale;
-          -webkit-font-smoothing: antialiased;
-          font-smoothing: antialiased;
+        }
+        html {
+          font-size: 62.5%;
+        }
+        html,
+        body {
+          font-family: "Montserrat", sans-serif;
+        }
+        body {
+          line-height: 1.3;
+        }
+        body,
+        html,
+        #__next {
+          height: 100%;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
         }
       `}
     />
