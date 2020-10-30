@@ -22,13 +22,13 @@ const Item = styled.li`
     transform: translateY(0);
   }
 `;
-const Year = styled.p`
+export const Year = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
 `;
-const Name = styled.p`
+export const Name = styled.p`
   align-self: start;
 `;
-const Price = styled.p`
+export const Price = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
