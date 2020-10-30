@@ -6,7 +6,7 @@ const StyledShowcase = styled.section`
 `;
 const Items = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 `;
 export default function Showcase({ items }) {
   const renderItems = () => {
