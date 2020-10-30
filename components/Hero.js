@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 import React from "react";
 const StyledHero = styled.section`
   justify-self: center;
@@ -38,13 +39,14 @@ const HeroBtn = styled.button`
   }
 `;
 export default function Hero() {
+  const router = useRouter();
   return (
     <StyledHero>
       <HeroTextWrapper>
         <HeroText>Welcome to the greatest wine shop in the world!</HeroText>
         <HeroText>Take a look at our awesome stuff</HeroText>
       </HeroTextWrapper>
-      <HeroBtn>Browse our shop</HeroBtn>
+      <HeroBtn onClick={() => router.push("/shop")}>Browse our shop</HeroBtn>
     </StyledHero>
   );
 }
