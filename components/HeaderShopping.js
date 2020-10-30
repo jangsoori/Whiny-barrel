@@ -8,6 +8,7 @@ const StyledHeaderShopping = styled.section`
   align-items: center;
   align-content: center;
   height: 100%;
+  justify-self: end;
   p {
     font-size: 2rem;
   }
