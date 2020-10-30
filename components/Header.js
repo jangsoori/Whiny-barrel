@@ -6,8 +6,8 @@ import MenuBtn from "./MenuBtn";
 import SideMenu from "./SideMenu";
 const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.colors.primary};
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   position: relative;
   align-items: center;
   align-content: center;
