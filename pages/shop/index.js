@@ -6,11 +6,9 @@ import { server } from "../../config/index";
 const StyledShop = styled.section``;
 export default function index({ categories, items }) {
   return (
-    <StyledShop>
-      <ShopLayout>
-        <ShopMain categories={categories} items={items} />
-      </ShopLayout>
-    </StyledShop>
+    <ShopLayout>
+      <ShopMain categories={categories} items={items} />
+    </ShopLayout>
   );
 }
 

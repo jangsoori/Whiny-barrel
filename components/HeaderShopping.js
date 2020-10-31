@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
+import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
-import useCartValue from "../hooks/useCartValue";
+import useCart from "../hooks/useCart";
 const StyledHeaderShopping = styled.section`
   color: white;
   display: grid;
@@ -16,11 +17,15 @@ const StyledHeaderShopping = styled.section`
   }
 `;
 export default function HeaderShopping() {
-  const value = useCartValue();
+  const { value } = useCart();
+  const router = useRouter();
   return (
     <StyledHeaderShopping>
       <i className="far fa-heart fa-2x"></i>
-      <i className="fas fa-shopping-bag fa-2x"></i>
+      <i
+        className="fas fa-shopping-bag fa-2x"
+        onClick={() => router.push("/shop/cart")}
+      ></i>
       <p>{value.toFixed(2)} GBP</p>
     </StyledHeaderShopping>
   );

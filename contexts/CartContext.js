@@ -7,8 +7,13 @@ const CartProvider = ({ children }) => {
     setCart([...cart, item]);
   };
 
+  const deleteFromCart = (id) => {
+    setCart(cart.filter((el) => el.id !== id));
+  };
   return (
-    <CartContext.Provider value={{ cart, addToCart }}>
+    <CartContext.Provider
+      value={{ cart, actions: { addToCart, deleteFromCart } }}
+    >
       {children}
     </CartContext.Provider>
   );

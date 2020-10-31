@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { CartContext } from "../contexts/CartContext";
 
-export default function useCartValue() {
+export default function useCart() {
   const [value, setValue] = React.useState(0);
   const { cart } = useContext(CartContext);
   useEffect(() => {
@@ -9,5 +9,5 @@ export default function useCartValue() {
     setValue(cartValue);
   }, [cart]);
 
-  return value;
+  return { value, cart };
 }

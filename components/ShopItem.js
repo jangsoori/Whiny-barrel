@@ -2,8 +2,7 @@ import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import React from "react";
-import { CartContext } from "../contexts/CartContext";
-import { Name, Price, Year } from "./ShowcaseItem";
+import useCartActions from "../hooks/useCartActions";
 const Item = styled.div`
   border: 1px solid #d2d2d2;
   border-radius: 5px;
@@ -28,11 +27,24 @@ const Actions = styled.div`
   display: grid;
   grid-template-rows: repeat(2, max-content);
   row-gap: 0.5rem;
+  > * {
+    cursor: pointer;
+  }
 `;
 const ActionAddBasket = styled.p`
   background: ${({ theme }) => theme.colors.primary};
   color: white;
   padding: 1rem 1.5rem;
+`;
+
+const Year = styled.p`
+  color: ${({ theme }) => theme.colors.secondary};
+`;
+const Name = styled.p`
+  align-self: start;
+`;
+const Price = styled.p`
+  color: ${({ theme }) => theme.colors.secondary};
 `;
 
 const ActionAddFav = styled.p``;
@@ -41,7 +53,7 @@ const ActionSeeDetails = styled.p`
   padding: 1rem 1.5rem;
 `;
 export default function ShopItem({ item }) {
-  const { cart, addToCart } = React.useContext(CartContext);
+  const { addToCart } = useCartActions();
 
   return (
     <Item>
