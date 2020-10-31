@@ -41,10 +41,7 @@ const ActionSeeDetails = styled.p`
   padding: 1rem 1.5rem;
 `;
 export default function ShopItem({ item }) {
-  const { cart, setCart } = React.useContext(CartContext);
-  const addToCart = () => {
-    setCart([...cart, item]);
-  };
+  const { cart, addToCart } = React.useContext(CartContext);
 
   return (
     <Item>
@@ -53,7 +50,7 @@ export default function ShopItem({ item }) {
       <Name className="shop-item-name">{item.name}</Name>
       <Price>{item.price.toFixed(2)} GBP</Price>
       <Actions>
-        <ActionAddBasket onClick={() => addToCart()}>
+        <ActionAddBasket onClick={() => addToCart(item)}>
           Add to cart
         </ActionAddBasket>
         <ActionSeeDetails>See details</ActionSeeDetails>

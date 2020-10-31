@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import Image from "next/image";
+import { CartContext } from "../contexts/CartContext";
 const Item = styled.li`
   display: grid;
   grid-template-rows: 1fr 2fr 1fr 10fr;
@@ -56,6 +57,8 @@ const Img = styled(Image)`
   justify-content: center;
 `;
 export default function ShowcaseItem({ item }) {
+  const { addToCart } = React.useContext(CartContext);
+
   return (
     <Item>
       <Year>{item.year}</Year>
@@ -64,7 +67,7 @@ export default function ShowcaseItem({ item }) {
       <Img height={300} width={250} src={`/pics/${item.picture}`}></Img>
       <ShopIcons className="shop-icons">
         <i className="far fa-heart"></i>
-        <i className="fas fa-cart-plus"></i>
+        <i className="fas fa-cart-plus" onClick={() => addToCart(item)}></i>
       </ShopIcons>
     </Item>
   );
