@@ -25,13 +25,13 @@ const CategoryFilter = styled.li`
 
 export default function ShopFilters({ categories }) {
   const renderCategories = () =>
-    categories.map((category) => (
-      <CategoryFilter>
+    categories.map((category, i) => (
+      <CategoryFilter key={i}>
         <input type="checkbox" name="" id="" />
         <p>{category}</p>
       </CategoryFilter>
     ));
-  console.log(categories);
+  // console.log(categories);
   return (
     <StyledShopFilters>
       <Title>Product Filters</Title>
