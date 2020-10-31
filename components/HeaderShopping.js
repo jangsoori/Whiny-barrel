@@ -1,5 +1,7 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { CartContext } from "../contexts/CartContext";
+import useCartValue from "../hooks/useCartValue";
 const StyledHeaderShopping = styled.section`
   color: white;
   display: grid;
@@ -14,11 +16,12 @@ const StyledHeaderShopping = styled.section`
   }
 `;
 export default function HeaderShopping() {
+  const value = useCartValue();
   return (
     <StyledHeaderShopping>
       <i className="far fa-heart fa-2x"></i>
       <i className="fas fa-shopping-bag fa-2x"></i>
-      <p>0.00 GBP</p>
+      <p>{value.toFixed(2)} GBP</p>
     </StyledHeaderShopping>
   );
 }
