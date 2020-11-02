@@ -11,7 +11,7 @@ const StyledShopLayout = styled.section`
 `;
 const Content = styled.section`
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10rem;
   flex: 1;
 `;
 export default function ShopLayout({ children }) {
