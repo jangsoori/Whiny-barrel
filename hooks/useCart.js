@@ -5,7 +5,10 @@ export default function useCart() {
   const [value, setValue] = React.useState(0);
   const { cart } = useContext(CartContext);
   useEffect(() => {
-    const cartValue = cart.reduce((prev, current) => prev + current.price, 0);
+    const cartValue = cart.reduce(
+      (prev, current) => prev + current.price * current.qty,
+      0
+    );
     setValue(cartValue);
   }, [cart]);
 
