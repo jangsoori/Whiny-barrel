@@ -21,6 +21,7 @@ const CartMain = styled.section`
   place-items: center;
   column-gap: 4rem;
   margin: 0 auto;
+  position: relative;
 `;
 const Items = styled.ul`
   display: grid;
