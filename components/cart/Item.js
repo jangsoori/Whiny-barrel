@@ -22,7 +22,12 @@ const Price = styled.p`
   font-size: 1.6rem;
   color: ${({ theme }) => theme.colors.secondary};
 `;
-const Qty = styled.p``;
+const Qty = styled.p`
+  font-size: 1.4rem;
+  span {
+    margin-left: 0.4rem;
+  }
+`;
 const Actions = styled.section``;
 const Action = styled.button`
   border: none;
@@ -41,7 +46,9 @@ export default function Item({ item }) {
         <Name>{item.name}</Name>
         <Price>{item.price.toFixed(2)} GBP</Price>
       </Info>
-      <Qty>Qty: {item.qty}</Qty>
+      <Qty>
+        Qty: <span>{item.qty}</span>
+      </Qty>
       <Actions>
         <Action onClick={() => deleteFromCart(item._id)}>Remove</Action>
       </Actions>
