@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import React from "react";
 import useCart from "../../hooks/useCart";
+import useCartActions from "../../hooks/useCartActions";
 const StyledSummary = styled.section`
   display: grid;
   grid-template-rows: repeat(3, 1fr);
@@ -28,9 +29,21 @@ const BreakLine = styled.span`
   height: 1px;
 `;
 const Actions = styled.section``;
-const Action = styled.button``;
+const Action = styled.button`
+  border: none;
+  background: ${({ theme }) => theme.colors.primary};
+  color: white;
+  padding: 1rem 1.5rem;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  cursor: pointer;
+  &:last-of-type {
+    background: white;
+    color: ${({ theme }) => theme.colors.primary};
+  }
+`;
 export default function Summary() {
   const { count, value } = useCart();
+  const { clearCart } = useCartActions();
   return (
     <StyledSummary>
       <Total>
@@ -42,6 +55,10 @@ export default function Summary() {
         <Content>{value.toFixed(2)} GBP</Content>
       </Total>
       <BreakLine />
+      <Actions>
+        <Action>Checkout</Action>
+        <Action onClick={() => clearCart()}>Clear</Action>
+      </Actions>
     </StyledSummary>
   );
 }
