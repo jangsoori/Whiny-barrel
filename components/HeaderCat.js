@@ -24,32 +24,32 @@ export default function HeaderCat() {
     <StyledHeaderCat>
       <Categories>
         <Category>
-          <CategoryLink href="/">
+          <CategoryLink href="/shop/categories/all">
             <a>All wines</a>
           </CategoryLink>
         </Category>
         <Category>
-          <CategoryLink href="/">
+          <CategoryLink href="/shop/categories/american">
             <a>American</a>
           </CategoryLink>
         </Category>
         <Category>
-          <CategoryLink href="/">
+          <CategoryLink href="/shop/categories/french">
             <a>French</a>
           </CategoryLink>
         </Category>
         <Category>
-          <CategoryLink href="/">
+          <CategoryLink href="/shop/categories/spanish">
             <a>Spanish</a>
           </CategoryLink>
         </Category>
         <Category>
-          <CategoryLink href="/">
+          <CategoryLink href="/shop/categories/under100">
             <a>Under 100 GBP</a>
           </CategoryLink>
         </Category>
         <Category>
-          <CategoryLink href="/">
+          <CategoryLink href="/shop/categories/other">
             <a>Other</a>
           </CategoryLink>
         </Category>
