@@ -46,6 +46,9 @@ const Name = styled.p`
 const Price = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
 `;
+const Stock = styled.p`
+  color: ${({ theme }) => theme.colors.secondary};
+`;
 
 const ActionAddFav = styled.p``;
 const ActionSeeDetails = styled.p`
@@ -60,6 +63,7 @@ export default function ShopItem({ item }) {
       <Image src={`/pics/${item.picture}`} width={200} height={220} />
       <Year>{item.year}</Year>
       <Name className="shop-item-name">{item.name}</Name>
+      <Stock>Stock: {item.stock}</Stock>
       <Price>{item.price.toFixed(2)} GBP</Price>
       <Actions>
         <ActionAddBasket onClick={() => addToCart(item)}>
