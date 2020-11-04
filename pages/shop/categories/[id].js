@@ -1,13 +1,17 @@
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useContext } from "react";
 import ShopLayout from "../../../components/ShopLayout";
 import ShopMain from "../../../components/ShopMain";
 import { server } from "../../../config/index";
+import ShopProvider, { ShopContext } from "../../../contexts/ShopContext";
+
+// const renderCategoryItems = items;
 
 export default function id({ items }) {
-  console.log(items);
+  const { categories } = useContext(ShopContext);
   return (
     <ShopLayout>
-      <ShopMain items={items} categories={[]} />
+      <ShopMain items={items} categories={categories} />
     </ShopLayout>
   );
 }
@@ -28,6 +32,7 @@ export async function getStaticPaths(ctx) {
 export async function getStaticProps({ params }) {
   const res = await fetch(`${server}/items.json`);
   const data = await res.json();
+
   const itemsFromCat = () => {
     switch (params.id) {
       case "french":
@@ -52,5 +57,7 @@ export async function getStaticProps({ params }) {
         return null;
     }
   };
-  return { props: { items: itemsFromCat() } };
+  return {
+    props: { items: itemsFromCat() },
+  };
 }
