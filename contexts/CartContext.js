@@ -3,9 +3,10 @@ export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+
+  // useEffect(() => {
+  //   console.log(cart);
+  // }, [cart]);
   const addToCart = (item) => {
     //Make copy of array, find index of item in array. If exists, add quanity, if not, add item with quantity of 1
     const newarr = cart;
@@ -26,6 +27,7 @@ const CartProvider = ({ children }) => {
   const clearCart = () => {
     setCart([]);
   };
+
   return (
     <CartContext.Provider
       value={{ cart, actions: { addToCart, deleteFromCart, clearCart } }}
