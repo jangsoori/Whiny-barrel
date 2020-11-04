@@ -1,10 +1,13 @@
 import styled from "@emotion/styled";
-import React from "react";
+import React, { useContext } from "react";
 import ShopLayout from "../../components/ShopLayout";
 import ShopMain from "../../components/ShopMain";
 import { server } from "../../config/index";
+import ShopProvider, { ShopContext } from "../../contexts/ShopContext";
 const StyledShop = styled.section``;
-export default function index({ categories, items }) {
+export default function ShopIndexPage() {
+  const { items, categories } = useContext(ShopContext);
+
   return (
     <ShopLayout>
       <ShopMain categories={categories} items={items} />
@@ -12,20 +15,20 @@ export default function index({ categories, items }) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch(`${server}/items.json`);
-  const data = await res.json();
-  const categories = [];
-  //get categories
-  data.forEach((item) => {
-    categories.push(item.country);
-  });
+// export async function getStaticProps() {
+//   const res = await fetch(`${server}/items.json`);
+//   const data = await res.json();
+//   const categories = [];
+//   //get categories
+//   data.forEach((item) => {
+//     categories.push(item.country);
+//   });
 
-  return {
-    props: {
-      items: data,
-      //remove duplicates with Set
-      categories: [...new Set(categories)],
-    },
-  };
-}
+//   return {
+//     props: {
+//       items: data,
+//       //remove duplicates with Set
+//       categories: [...new Set(categories)],
+//     },
+//   };
+// }
