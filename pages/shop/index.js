@@ -6,11 +6,11 @@ import { server } from "../../config/index";
 import ShopProvider, { ShopContext } from "../../contexts/ShopContext";
 const StyledShop = styled.section``;
 export default function ShopIndexPage() {
-  const { items, categories } = useContext(ShopContext);
+  const { items } = useContext(ShopContext);
 
   return (
     <ShopLayout>
-      <ShopMain categories={categories} items={items} />
+      <ShopMain items={items} />
     </ShopLayout>
   );
 }

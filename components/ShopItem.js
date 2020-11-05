@@ -1,6 +1,7 @@
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import React from "react";
 import useCartActions from "../hooks/useCartActions";
 const Item = styled.div`
@@ -43,6 +44,9 @@ const Year = styled.p`
 const Name = styled.p`
   align-self: start;
 `;
+const Country = styled.p`
+  color: ${({ theme }) => theme.colors.secondary};
+`;
 const Price = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
 `;
@@ -57,19 +61,24 @@ const ActionSeeDetails = styled.p`
 `;
 export default function ShopItem({ item }) {
   const { addToCart } = useCartActions();
-
+  const router = useRouter();
   return (
     <Item>
       <Image src={`/pics/${item.picture}`} width={200} height={220} />
       <Year>{item.year}</Year>
       <Name className="shop-item-name">{item.name}</Name>
+      <Country>{item.country}</Country>
       <Stock>Stock: {item.stock}</Stock>
       <Price>{item.price.toFixed(2)} GBP</Price>
       <Actions>
         <ActionAddBasket onClick={() => addToCart(item)}>
           Add to cart
         </ActionAddBasket>
-        <ActionSeeDetails>See details</ActionSeeDetails>
+        <ActionSeeDetails
+          onClick={() => router.push(`/shop/items/${item._id}`)}
+        >
+          See details
+        </ActionSeeDetails>
       </Actions>
     </Item>
   );

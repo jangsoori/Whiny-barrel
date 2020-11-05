@@ -8,10 +8,10 @@ const StyledShopMain = styled.section`
   grid-template-columns: auto 1fr;
   column-gap: 10rem;
 `;
-export default function ShopMain({ categories, items }) {
+export default function ShopMain({ items }) {
   return (
     <StyledShopMain>
-      <ShopFilters categories={categories} />
+      <ShopFilters />
       <ShopItems items={items} />
     </StyledShopMain>
   );
