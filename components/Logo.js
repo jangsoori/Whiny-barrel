@@ -11,9 +11,12 @@ const StyledLogo = styled.h1`
     font-size: 2rem;
   }
   @media only screen and (max-width: ${({ theme }) =>
-      theme.breakpoints.mobile}) {
-    text-align: left;
-    font-size: 1.6rem;
+      theme.breakpoints.tabletS}) {
+    font-size: 2.5rem;
+    grid-row: 1/2;
+    grid-column: 1/-1;
+    text-align: center;
+    justify-self: center;
   }
 `;
 export default function Logo() {

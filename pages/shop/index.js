@@ -4,7 +4,7 @@ import ShopLayout from "../../components/ShopLayout";
 import ShopMain from "../../components/ShopMain";
 import { server } from "../../config/index";
 import ShopProvider, { ShopContext } from "../../contexts/ShopContext";
-const StyledShop = styled.section``;
+
 export default function ShopIndexPage() {
   const { items } = useContext(ShopContext);
 

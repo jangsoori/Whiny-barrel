@@ -8,5 +8,6 @@ export const theme = {
     tabletM: "850px",
     tabletS: "600px",
     mobile: "460px",
+    mobileS: "360px",
   },
 };

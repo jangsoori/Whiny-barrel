@@ -20,6 +20,11 @@ const HeroText = styled.h2`
   color: white;
   font-family: "Josefin Sans";
   font-weight: 300;
+  padding: 0 2rem;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletM}) {
+    font-size: 3rem;
+  }
 `;
 const HeroBtn = styled.button`
   font-family: "Josefin Sans";

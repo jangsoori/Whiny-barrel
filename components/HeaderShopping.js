@@ -10,18 +10,15 @@ const StyledHeaderShopping = styled.section`
   column-gap: 2rem;
   align-items: center;
   align-content: center;
-  height: 100%;
+  height: 6rem;
   justify-self: end;
+
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
+    column-gap: 1rem;
+  }
   p {
     font-size: 2rem;
-    @media only screen and (max-width: ${({ theme }) =>
-        theme.breakpoints.tabletL}) {
-      font-size: 1.4rem;
-    }
-    @media only screen and (max-width: ${({ theme }) =>
-        theme.breakpoints.mobile}) {
-      font-size: 1.2rem;
-    }
   }
   i {
     @media only screen and (max-width: ${({ theme }) =>

@@ -14,11 +14,16 @@ const StyledHeader = styled.header`
   width: 100%;
   padding: 1rem 2rem;
   z-index: 10;
-  height: 6rem;
+  height: 100%;
   @media only screen and (max-width: ${({ theme }) =>
       theme.breakpoints.mobile}) {
-    grid-template-columns: repeat(3, max-content);
+    grid-template-rows: auto;
     justify-content: space-between;
+  }
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletS}) {
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 0;
   }
 `;
 export default function Header() {

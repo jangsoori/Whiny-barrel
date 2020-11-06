@@ -22,6 +22,10 @@ const Item = styled.div`
     font-weight: 400;
     margin: 0 1rem;
   }
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobileS}) {
+    width: 26rem;
+  }
 `;
 
 const Actions = styled.div`

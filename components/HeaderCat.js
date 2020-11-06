@@ -63,16 +63,29 @@ const MobileShow = styled.div`
   p {
     margin-right: 1rem;
   }
+  i {
+    ${({ active }) =>
+      active &&
+      css`
+        transform: rotate(180deg);
+        display: none;
+      `};
+  }
+  @media only screen and (min-width: ${({ theme }) =>
+      theme.breakpoints.tabletS}) {
+    display: none;
+  }
 `;
 export default function HeaderCat() {
   //Mobile state, if active roll it out, if hidden, do not display
   const [active, setActive] = useState(false);
+  console.log(active);
   return (
     <>
       <StyledHeaderCat>
         <MobileShow onClick={() => setActive(!active)}>
           <p>Categories </p>
-          <i class="fas fa-arrow-circle-down"></i>
+          <i class={`fas fa-arrow-circle-down`} active={active}></i>
         </MobileShow>
         <Categories active={active}>
           <Category>

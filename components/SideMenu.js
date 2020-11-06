@@ -6,8 +6,8 @@ import { css } from "@emotion/core";
 const StyledSideMenu = styled.nav`
   position: absolute;
   left: 0;
-  top: 6rem;
-  transform: translateX(-100%);
+  top: 50%;
+  transform: translateX(-100%) translateY(50%);
   background: white;
   width: 20rem;
   height: 30rem;
@@ -17,11 +17,13 @@ const StyledSideMenu = styled.nav`
   align-items: center;
   justify-content: center;
   border-bottom-right-radius: 1rem;
+  border-top-right-radius: 1rem;
   transition: transform 0.2s linear;
+
   ${({ open }) =>
     open &&
     css`
-      transform: translateX(0);
+      transform: translateX(0) translateY(50%);
     `};
 `;
 const NavList = styled.ul`

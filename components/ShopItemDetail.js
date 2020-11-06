@@ -6,7 +6,9 @@ import useCartActions from "../hooks/useCartActions";
 const Item = styled.div`
   display: flex;
   justify-content: center;
-  width: 60rem;
+  align-items: center;
+  align-self: center;
+  max-width: 60rem;
   margin: 0 auto;
 `;
 const ImageWrapper = styled.section``;
@@ -19,13 +21,14 @@ const Header = styled.header`
   display: grid;
   grid-template-columns: repeat(3, max-content);
   place-items: center;
+
   column-gap: 1rem; ;
 `;
 const Name = styled.h2`
-  font-size: 2rem;
+  font-size: 2vw;
 `;
 const HeaderMeta = styled.p`
-  font-size: 2rem;
+  font-size: 2vw;
   color: white;
   background: ${({ theme }) => theme.colors.primary};
   padding: 1rem 2rem;
@@ -33,10 +36,10 @@ const HeaderMeta = styled.p`
 `;
 
 const Desc = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.6vw;
 `;
 const Price = styled.p`
-  font-size: 2rem;
+  font-size: 2vw;
   font-weight: 500;
 `;
 const Actions = styled.section``;

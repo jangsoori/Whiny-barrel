@@ -5,9 +5,10 @@ const StyledShowcase = styled.section`
   background: white;
 `;
 const Items = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  padding: 4rem 0;
+  display: flex;
+  padding: 4rem 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
   justify-content: center;
   justify-items: center;
 `;

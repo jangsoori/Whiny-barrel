@@ -6,6 +6,10 @@ const StyledSubHeader = styled.header`
   padding: 2rem;
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
   margin-bottom: 10rem;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletL}) {
+    margin-bottom: 3rem;
+  }
 `;
 const FeatureList = styled.ul`
   display: grid;
@@ -18,7 +22,7 @@ const FeatureList = styled.ul`
   }
   @media only screen and (max-width: ${({ theme }) =>
       theme.breakpoints.tabletM}) {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 `;
 const Feature = styled.li`

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../contexts/CartContext";
-import { Title } from "./ShopFilters";
+import { Header, Title } from "./ShopFilters";
 import ShopItem from "./ShopItem";
 const StyledShopItems = styled.section``;
 const Items = styled.ul`
@@ -11,11 +11,12 @@ const Items = styled.ul`
   /* justify-content: left; */
   justify-items: left;
   gap: 5rem;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletL}) {
+    justify-items: center;
+  }
 `;
-const Header = styled.section`
-  display: flex;
-  place-items: center;
-`;
+
 const Sort = styled.select`
   margin-left: 2rem;
 `;
