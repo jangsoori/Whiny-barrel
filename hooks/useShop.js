@@ -7,10 +7,12 @@ export default function useShop() {
     const getItems = async () => {
       const res = await fetch(`/api/getItems`);
       const data = await res.json();
-      setItems(data.items);
+      console.log(data);
+      setItems(data);
     };
     getItems();
   }, []);
 
+  console.log(items);
   return { items };
 }
