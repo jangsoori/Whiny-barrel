@@ -5,7 +5,8 @@ export const theme = {
   },
   breakpoints: {
     tabletL: "1024px",
-    tabletM: "768px",
+    tabletM: "850px",
+    tabletS: "600px",
     mobile: "460px",
   },
 };

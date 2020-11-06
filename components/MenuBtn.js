@@ -32,6 +32,22 @@ const StyledMenuBtn = styled.button`
       width: 4rem;
       top: 100%;
     }
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.mobile}) {
+      height: 3px;
+      &:first-of-type {
+        width: 3rem;
+        top: 0px;
+      }
+      &:nth-of-type(2) {
+        width: 1.5rem;
+        top: 50%;
+      }
+      &:last-of-type {
+        width: 3rem;
+        top: 100%;
+      }
+    }
     ${({ open }) =>
       open &&
       css`

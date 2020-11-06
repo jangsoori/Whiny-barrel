@@ -9,9 +9,17 @@ const StyledSubHeader = styled.header`
 `;
 const FeatureList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  justify-content: space-around;
-  gap: 5rem;
+  grid-template-columns: repeat(4, min-content);
+  justify-content: center;
+  gap: 2rem;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletL}) {
+    gap: 1rem;
+  }
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletM}) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 const Feature = styled.li`
   display: grid;
@@ -26,6 +34,15 @@ const Feature = styled.li`
   span {
     font-size: 1.8rem;
     text-align: center;
+  }
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.tabletL}) {
+    i {
+      font-size: 2rem;
+    }
+    span {
+      font-size: 1.4rem;
+    }
   }
 `;
 export default function SubHeader() {

@@ -14,6 +14,20 @@ const StyledHeaderShopping = styled.section`
   justify-self: end;
   p {
     font-size: 2rem;
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.tabletL}) {
+      font-size: 1.4rem;
+    }
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.mobile}) {
+      font-size: 1.2rem;
+    }
+  }
+  i {
+    @media only screen and (max-width: ${({ theme }) =>
+        theme.breakpoints.mobile}) {
+      font-size: 1.4rem;
+    }
   }
 `;
 export default function HeaderShopping() {

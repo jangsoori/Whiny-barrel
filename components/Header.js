@@ -15,6 +15,11 @@ const StyledHeader = styled.header`
   padding: 1rem 2rem;
   z-index: 10;
   height: 6rem;
+  @media only screen and (max-width: ${({ theme }) =>
+      theme.breakpoints.mobile}) {
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
+  }
 `;
 export default function Header() {
   const [open, setOpen] = useState(false);
